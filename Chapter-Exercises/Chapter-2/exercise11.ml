@@ -17,3 +17,7 @@ then computes forward n more numbers. Hence, fib n = h n 0 1 for any n > 0.
   
 What is the first value of n for which fib_fast n is negative, indicating that integer overflow occurred?
 *)
+
+let rec helper n pp p = if n = 1 then p else helper (n - 1) p (pp + p)
+
+let fib_fast n = helper n 0 1 
